@@ -115,7 +115,6 @@ function drawApple() {
 }
 
 function drawSnake() {
-
     canvasContext.drawImage(headImage, snake.x[0], snake.y[0]);
     for (let z = 1; z < snake.size; z++) {
         canvasContext.drawImage(bodyImage, snake.x[z], snake.y[z]);
@@ -133,13 +132,13 @@ function gameOver() {
 
 
 function locateApple() {
-    // You have to write code here to place the apple in different position in the canvas
-    
+    // You have to write code here to place the apple in different position in the canvas  
   if(checkApple())
   { 
     apple.x = generateRandom()*10;
     apple.y = generateRandom()*10; 
     score++;
+    snake.size++;
     scoreSpan.innerHTML = score;
   }
 }    
